@@ -9,8 +9,8 @@ rancher:
       cap_add:
       - NET_ADMIN
       environment:
-        PUID: 1000
-        PGID: 1000
+        PUID: 1020
+        PGID: 1020
         TZ: America/Vancouver
         URL: duckdns.org
         SUBDOMAINS: fruit-nextcloud

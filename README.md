@@ -76,7 +76,7 @@ FreeNAS volume2: ssd (TODO)
 
 #### Variables that can be changed
 Name of user/group in FreeNAS: rancher  
-User/Group ID: 1000  
+User/Group ID: 1020  
 Dataset name: rancher  
 
 
@@ -90,11 +90,11 @@ This creates the user and group to be used for the dataset and share
 - Account
 - Group
 - Add group
-- Group ID: 1000
+- Group ID: 1020
 - Group Name: rancher
 - User
 - Add user
-- User ID: 1000
+- User ID: 1020
 - Username: rancher
 - Create new primary group: uncheck
 - Primary Group: rancher
@@ -191,14 +191,14 @@ This step creates a docker that makes your FreeNAS dataset available as a NFS sh
 - `cd /mnt/nfs-1/`
 
 
-## Create media folders with the 1000 user
+## Create media folders with the 1020 user
 This is an important part to get permissions to work across dockers and windows share.  
 Check out the video in Credits (Part 2) for more details.  
-Creates the 1000 user inside the RancherOS and creates the folders for the share. This makes sure the 1000 user owns the folders.
+Creates the 1020 user inside the RancherOS and creates the folders for the share. This makes sure the 1020 user owns the folders.
 - `ssh rancher@10.0.0.200`
 - rancher_password
 - `sudo su -`
-- `adduser -u 1000 share_user`
+- `adduser -u 1020 share_user`
 - share_user_password
 - `su share_user`
 - `cd /mnt/nfs-1/`
@@ -415,7 +415,7 @@ Now nextcloud should be available at https://fruit-nextcloud.duckdns.org
 **A:** The file rancheros-cloud-config.yml creates a docker that makes your share available  
 
 **Q:** Can I use my existing media folders and modify it to be used like in this guide?  
-**A:** Needs to be tested, important parts are users: root, wheel and 1000. And to create the media(TV, Movies etc) folders with the 1000 user.  
+**A:** Needs to be tested, important parts are users: root, wheel and 1020. And to create the media(TV, Movies etc) folders with the 1020 user.  
 
 **Q:** How do I modify the .yml files, download my own, or reset containers if I did something wrong?  
 **A:** Usefull commands:  

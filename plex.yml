@@ -6,8 +6,8 @@ rancher:
       restart: unless-stopped
       environment:
         TZ: America/Vancouver
-        PGID: 1000
-        PUID: 1000
+        PGID: 1020
+        PUID: 1020
         VERSION: latest
       net: host
       volumes:

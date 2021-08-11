@@ -5,8 +5,8 @@ rancher:
       container_name: transmission
       restart: unless-stopped
       environment:
-        PGID: 1000
-        PUID: 1000
+        PGID: 1020
+        PUID: 1020
         TZ: America/Vancouver
       ports:
       - 9091:9091

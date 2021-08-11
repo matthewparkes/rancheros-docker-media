@@ -5,8 +5,8 @@ rancher:
       container_name: transmission2
       restart: unless-stopped
       environment:
-        PGID: 1000
-        PUID: 1000
+        PGID: 1020
+        PUID: 1020
         TZ: America/Vancouver
         TRANSMISSION_DOWNLOAD_DIR: /data/downloads/complete
         TRANSMISSION_INCOMPLETE_DIR: /data/downloads/incomplete
