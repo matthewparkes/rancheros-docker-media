@@ -11,5 +11,5 @@ rancher:
         volumes:
         - /mnt/nfs-1/config/heimdall:/config
         ports:
-        - 5555:80
-        - 5443:443
+        - 8500:80
+        - 8600:443
