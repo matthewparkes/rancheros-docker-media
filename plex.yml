@@ -3,11 +3,11 @@ rancher:
     plex:
       image: linuxserver/plex
       hostname: plex
-      restart: always
+      restart: unless-stopped
       environment:
-        TZ: Europe/Stockholm
-        PGID: 1020
-        PUID: 1020
+        TZ: America/Vancouver
+        PGID: 1000
+        PUID: 1000
         VERSION: latest
       net: host
       volumes:

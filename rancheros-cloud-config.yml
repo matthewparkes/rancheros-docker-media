@@ -3,12 +3,8 @@
 # /var/lib/rancher/conf/cloud-config.d/nfs.yml
 
 # https://github.com/rancher/os/issues/641
-write_files:
-  - path: /etc/rc.local
-    permissions: "0755"
-    content: |
-      #!/bin/bash
-      [ ! -e /usr/bin/docker ] && ln -s /usr/bin/docker.dist /usr/bin/docker
+ssh_authorized_keys:
+  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDD1CizeDcwBeHhg013FF04aXoukM61sYV7rSpeC8CAQGSkEAMhVqgXQyfc6s7VV5zB2d+xdlrQ0D2OF/5tQcpCZ+ZLxOBgc/1bHANbAhdn71AIRHsUCZ62AxofBo8LxLMrLdNW2bfIKCiOpZNM5v99kfJ3mbSgRPWC+/GyeJ6rV+uHdqJOGBbobunCQSgH0L6aZJ56YBXncTniXI1RXrgJIUNn19fHYcTv62Tjl7Q4CisbPwDpQ6+PsCPjnnaeGfWsCF2uiR6t2TOAv+BNmicA5TLqExORzezT47bzZJgN390IAch97uJdIHQyIBJVzB9YDI5q/A7cnqcdwWwKWOsZZewsfqAQS6iVqa5A/P7FlGwXeZyC9GhNiBJ8TwJ0ZAUVVztdI2mOh/5t1e8l/VRnsx3JX6oUypyqUIS4P+ObYIAtpFLfFwXGatBuBbHHlFgg3XpYuiobRyU1GUt1mR/8Y1pnk9zaQDIkLVxNvLgzVqWrsm9KhAzc8QZkk3HeGSkAOZYEFMe0mPpNyIG7FJ7kfW1CHRrEjRYFu/kE8hQmCix/UIkl+WsoNR+vANgZSVxGiW9+eupX0QFwuBEKrtZqsBbuJ8CLhUcsY4rNKD1LgzDGRT9LBt1DyHHVBfOJdxBgJbHCSVIrWmSfgONH05o1fLRTbWVmt8Vf89V2G5jUGw== wsl-xps
 
 rancher:
   services:
@@ -19,10 +15,10 @@ rancher:
         io.rancher.os.scope: system
       net: host
       privileged: true
-      restart: always
+      restart: unless-stopped
       volumes:
       - /usr/bin/iptables:/sbin/iptables:ro
       - /mnt/nfs-1:/mnt/nfs-1:shared
       environment:
-        SERVER: 10.0.0.113
-        SHARE: /mnt/tank/rancher
+        SERVER: 192.168.1.22
+        SHARE: /mnt/test/data

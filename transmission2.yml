@@ -3,11 +3,11 @@ rancher:
     transmission2:
       image: linuxserver/transmission
       container_name: transmission2
-      restart: always
+      restart: unless-stopped
       environment:
-        PGID: 1020
-        PUID: 1020
-        TZ: Europe/Stockholm
+        PGID: 1000
+        PUID: 1000
+        TZ: America/Vancouver
         TRANSMISSION_DOWNLOAD_DIR: /data/downloads/complete
         TRANSMISSION_INCOMPLETE_DIR: /data/downloads/incomplete
       ports:

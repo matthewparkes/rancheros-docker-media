@@ -5,9 +5,9 @@ rancher:
       container_name: duckdns
       restart: unless-stopped
       environment:
-        PUID: 1020
-        PGID: 1020
-        TZ: Europe/Stockholm
+        PUID: 1000
+        PGID: 1000
+        TZ: America/Vancouver
         SUBDOMAINS: subdomain1,subdomain2
         TOKEN: token
         LOG_FILE: true

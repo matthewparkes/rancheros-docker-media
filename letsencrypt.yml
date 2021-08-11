@@ -5,13 +5,13 @@ rancher:
       container_name: letsencrypt
       networks:
       - proxynet
-      restart: always
+      restart: unless-stopped
       cap_add:
       - NET_ADMIN
       environment:
-        PUID: 1020
-        PGID: 1020
-        TZ: Europe/Stockholm
+        PUID: 1000
+        PGID: 1000
+        TZ: America/Vancouver
         URL: duckdns.org
         SUBDOMAINS: fruit-nextcloud
         VALIDATION: http

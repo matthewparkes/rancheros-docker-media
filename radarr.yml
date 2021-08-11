@@ -3,11 +3,11 @@ rancher:
     radarr:
       image: linuxserver/radarr
       container_name: radarr
-      restart: always
+      restart: unless-stopped
       environment:
-        PGID: 1020
-        PUID: 1020
-        TZ: Europe/Stockholm
+        PGID: 1000
+        PUID: 1000
+        TZ: America/Vancouver
       ports:
       - 7878:7878
       volumes:
